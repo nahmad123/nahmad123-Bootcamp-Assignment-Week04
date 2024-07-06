@@ -1,5 +1,7 @@
 package CodingAssignmentWeek04;
 
+import java.util.Arrays;
+
 public class Assignment {
 
 	public static void main(String[] args) {
@@ -27,35 +29,33 @@ public class Assignment {
 //4. Create an array of String called names that contains the following values: “Sam”, “Tommy”, “Tim”, “Sally”, “Buck”, “Bob”.
 //a. Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.
 //b. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
-		String[] names = { "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
-		//int nameLength = extractStringLengths(names);
-		//for (int number : nameLength) {
-		//System.out.println(number);	
-		int sumOfLetters = 0;
+		String[] names = { "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};	
+		double sumOfLetters = 0;
 		for (String name : names) {
 			sumOfLetters += name.length();
 		}
-		System.out.println(sumOfLetters);
-		{
+		System.out.println(sumOfLetters / names.length);
+		
 		
 //5. How do you access the first element of any array?
 	 System.out.println("First element of array" + (ages[0]));
 
 		
 //6.Create a new array of int called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
-	 int[] nameLengths;
-	 double average = sum / names.length;
-		System.out.println(average);
-		{
-			
-		}
+	 int[] nameLengths = new int[names.length];
+	 for (int i = 0; i < names.length; i ++) {
+			nameLengths [i] = names [i].length();
+		}	
+System.out.println(Arrays.toString(nameLengths));     
 
 //7.Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
-//System.out.println("*** Question 7***");
-//int[] sumOfallElements = nameLengths.length;
-//for (int i = 0; i < sumOfallElements; i++);
-//String name = names[i];
-//System.out.println(sumOfallElements + name);
+System.out.println("*** Question 7***");
+sumOfLetters = 0;
+for (int name : nameLengths) {
+	sumOfLetters += name;
+}
+System.out.println(sumOfLetters);
+{
 
 
 //8. Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
@@ -90,7 +90,7 @@ System.out.println(firstName + " " + lastName);
 		double item1 = 2.10;
 		double moneyInWallet = 50.50; 
 		System.out.println(canIbuyIt(item1, moneyInWallet));
-	}
+	} //end of main
 
 //10. Write a method that takes an array of int and returns true if the sum of all the int in the array is greater than 100.
 public static boolean sumOfArray(int [] list)
